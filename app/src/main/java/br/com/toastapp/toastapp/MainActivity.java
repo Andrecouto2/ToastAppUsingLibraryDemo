@@ -13,7 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CustomToast.showToast(this, "TESTE");
+        if (BuildConfig.REPORT_CRASH) {
+            CustomToast.showToast(this, "REPORT CRASH");
+        } else {
+            CustomToast.showToast(this, "NO REPORT CRASH");
+        }
+
 
     }
 }
